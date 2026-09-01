@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduBridge AI | Equitable Education Access</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo"><span>✦</span> EduBridge AI</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#practice">Practice</a>
+    <a href="#insights">Insights</a>
+    <a href="#sources">Sources</a>
+  </nav>
+  <button class="lang-btn" onclick="toggleLanguage()">EN / ગુજરાતી</button>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="badge">AI FOR EQUITABLE EDUCATION ACCESS</div>
+    <h1>Learn without <span>language, level,</span> or access barriers.</h1>
+    <p>EduBridge AI connects every student's confusion to the right explanation, at the right level, in the right language.</p>
+    <div class="hero-buttons">
+      <a href="#doubt" class="primary-btn">Ask a Doubt →</a>
+      <a href="#practice" class="secondary-btn">Start Practice</a>
+    </div>
+    <div class="trust-row">
+      <div><b>24/7</b><small>Learning Support</small></div>
+      <div><b>3+</b><small>Learning Modes</small></div>
+      <div><b>Source</b><small>Grounded Answers</small></div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="orb">✦</div>
+    <div class="chat-window">
+      <div class="chat-title">AI Tutor <span>● Online</span></div>
+      <div class="bubble user">Explain photosynthesis in simple words.</div>
+      <div class="bubble ai">Sure! 🌱 Plants make their own food using sunlight, water and carbon dioxide. Think of sunlight as the energy that powers the plant's kitchen.</div>
+      <div class="source">📚 Source: Open educational biology text · Chapter 4</div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><strong>01</strong><span>Ask in your language</span></div>
+  <div><strong>02</strong><span>Get level-based explanations</span></div>
+  <div><strong>03</strong><span>Practice your weak areas</span></div>
+  <div><strong>04</strong><span>Track learning progress</span></div>
+</section>
+
+<section id="features" class="section">
+  <div class="section-heading">
+    <span>WHAT EDUBridge DOES</span>
+    <h2>One platform. Multiple paths to better learning.</h2>
+  </div>
+  <div class="feature-grid">
+    <article class="feature-card featured">
+      <div class="icon">💡</div><h3>Grounded Doubt Solver</h3>
+      <p>Step-by-step explanations based on open educational content, with a source trail students can trust.</p>
+      <a href="#doubt">Try it →</a>
+    </article>
+    <article class="feature-card">
+      <div class="icon">🎯</div><h3>Adaptive Practice</h3>
+      <p>Generate questions around demonstrated learning gaps and receive instant explanations.</p>
+      <a href="#practice">Practice →</a>
+    </article>
+    <article class="feature-card">
+      <div class="icon">📊</div><h3>Teacher Insights</h3>
+      <p>Turn quiz and engagement patterns into simple attention signals for teachers.</p>
+      <a href="#insights">View insights →</a>
+    </article>
+    <article class="feature-card">
+      <div class="icon">🌍</div><h3>Language Access</h3>
+      <p>Make explanations approachable across English, Hindi, Gujarati and more.</p>
+      <a href="#" onclick="toggleLanguage();return false;">Switch language →</a>
+    </article>
+  </div>
+</section>
+
+<section id="doubt" class="workspace section">
+  <div class="workspace-copy">
+    <span>AI DOUBT-SOLVING AGENT</span>
+    <h2>Turn “I don't understand” into “I got it.”</h2>
+    <p>Enter a concept, choose your level and language, and get a simple guided explanation.</p>
+    <div class="mini-points">
+      <p>✓ Simple step-by-step reasoning</p>
+      <p>✓ Adjusted to learner level</p>
+      <p>✓ Source-backed learning</p>
+    </div>
+  </div>
+  <div class="tool-card">
+    <label>Your doubt</label>
+    <textarea id="doubtInput" placeholder="Example: Explain Newton's second law..."></textarea>
+    <div class="two-col">
+      <select id="level">
+        <option>Beginner</option><option>Intermediate</option><option>Advanced</option>
+      </select>
+      <select id="language">
+        <option>English</option><option>Hindi</option><option>Gujarati</option>
+      </select>
+    </div>
+    <button class="primary-btn full" onclick="solveDoubt()">Explain with EduBridge AI</button>
+    <div id="answer" class="answer hidden"></div>
+  </div>
+</section>
+
+<section id="practice" class="section practice-section">
+  <div class="section-heading">
+    <span>ADAPTIVE PRACTICE GENERATOR</span>
+    <h2>Practice what you need—not what you already know.</h2>
+  </div>
+  <div class="practice-box">
+    <div>
+      <label>Choose a subject</label>
+      <select id="subject"><option>Mathematics</option><option>Science</option><option>Computer Science</option><option>English</option></select>
+    </div>
+    <div>
+      <label>Difficulty</label>
+      <select id="difficulty"><option>Easy</option><option>Medium</option><option>Hard</option></select>
+    </div>
+    <button class="primary-btn" onclick="generateQuestion()">Generate Question</button>
+  </div>
+  <div id="questionBox" class="question-box hidden"></div>
+</section>
+
+<section id="insights" class="section">
+  <div class="section-heading">
+    <span>TEACHER-FACING INSIGHTS</span>
+    <h2>Find learning gaps before they become learning loss.</h2>
+  </div>
+  <div class="dashboard">
+    <div class="metric"><small>Students monitored</small><strong>128</strong><span>↑ 8% this month</span></div>
+    <div class="metric"><small>Need attention</small><strong>14</strong><span class="warning">● Review recommended</span></div>
+    <div class="metric"><small>Avg. mastery</small><strong>76%</strong><span>↑ 5% this month</span></div>
+  </div>
+  <div class="student-table">
+    <div class="table-head"><span>Student</span><span>Mastery</span><span>Engagement</span><span>Signal</span></div>
+    <div class="table-row"><span>Aarav</span><span>91%</span><span>High</span><b class="good">On track</b></div>
+    <div class="table-row"><span>Meera</span><span>68%</span><span>Medium</span><b class="watch">Watch</b></div>
+    <div class="table-row"><span>Riya</span><span>52%</span><span>Low</span><b class="alert">Needs attention</b></div>
+    <div class="table-row"><span>Dev</span><span>84%</span><span>High</span><b class="good">On track</b></div>
+  </div>
+</section>
+
+<section id="sources" class="section sources">
+  <div>
+    <span>OPEN KNOWLEDGE</span>
+    <h2>Learning grounded in accessible sources.</h2>
+    <p>The prototype is designed to connect AI responses to open/public educational material rather than presenting unsupported answers.</p>
+  </div>
+  <div class="source-cards">
+    <div>📖 <b>Open Textbooks</b><small>Structured learning content</small></div>
+    <div>🔎 <b>Source Citations</b><small>Traceable explanations</small></div>
+    <div>🌐 <b>Multilingual</b><small>More inclusive access</small></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Education should adapt to the learner.</h2>
+  <p>Build a future where every student can ask, understand, practice and progress.</p>
+  <a href="#doubt" class="primary-btn">Start Learning →</a>
+</section>
+</main>
+
+<footer>
+  <div class="logo"><span>✦</span> EduBridge AI</div>
+  <p>AI for Equitable Education Access · Hackathon Prototype</p>
+</footer>
+</body>
+</html>
